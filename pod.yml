@@ -1,0 +1,15 @@
+# Simple Kubernetes Pod to deploy the app contained in tgcg/prm-reactive:1.4.0  
+apiVersion: v1
+kind: Pod
+metadata:
+  name: prm-pod
+  labels:
+    app: web
+spec:
+  containers:
+    - name: web-ctr
+      image: tgcg/prm-reactive:1.4.0  
+      ports:
+        - containerPort: 8088
+    
+                            

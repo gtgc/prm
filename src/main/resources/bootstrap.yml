@@ -1,0 +1,15 @@
+server:
+  port: 8088
+spring:  application:    name: prm-reactive
+#  config:#    import:#    - optional:configserver:spring-cloud-config-server
+#  cloud:#    config:#      profile: default
+#      discovery:#        enabled: true
+#        service-id: spring-cloud-config-server
+  jmx:    enabled: true
+eureka:  client:
+    enabled: true    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    webclient:      enabled: true
+  instance:    appname: prm-reactivemanagement:  endpoints:    web:      exposure:        include:        - refresh
+        - info    
+        - health 
